@@ -1,0 +1,25 @@
+﻿
+@model KategoriGuncelleModel
+
+
+<form asp-action="Guncelle" asp-controller="Kategori" asp-area="Admin" method="post"
+      class="w-75 mx-auto p-3" enctype="multipart/form-data">
+    <!--enctype="multipart/form-data" bu form aracılığıyla dosya tasımamızı sağlar yoksa null döner-->
+    <input type="hidden" asp-for="@Model.Id"/>
+    <div class="form-group">
+        <label>Kategorinin Adı:</label>
+        <span asp-validation-for="Ad" class="text-danger"></span>
+        <input asp-for="Ad" class="form-control" />
+    </div>
+    <div class="form-group">
+        <a asp-action="Index" asp-controller="Kategori" asp-area="Admin" class="btn btn-warning">Vazgec</a>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
+
+@section JavaScript
+{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

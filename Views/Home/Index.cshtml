@@ -1,0 +1,32 @@
+﻿
+@if (TempData["Bildirim"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Ürün Sepetinizde!</strong>@TempData["bildirim"].ToString()
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+}
+
+<div class="row">
+
+    <div class="col-md-3">
+        @await Component.InvokeAsync("KategoriList")
+
+    </div>
+
+    @*kategori listelemel *@
+
+    @*kategori viewcomponentin göstermiş olduğu şey gözükecek*@
+
+    <div class="col-md-9">
+
+        @await Component.InvokeAsync("UrunList",new
+        {
+           kategoriId=ViewBag.KategoriId
+        })
+    </div>
+    @*başka ürün gösterme sayfası oluşturmak için böyle yaptık*@
+</div>

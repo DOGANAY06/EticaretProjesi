@@ -1,0 +1,49 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] -EticaretProjesi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    @*navbar oluşturdum *@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">E Ticaret Projesi</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+     
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-action="Sepet" asp-controller="Home" > Sepete Git <span class="badge bg-danger">@TempData["urunSayisi"]</span></a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    @*navbar oluşturdum *@
+
+    <div class="mt-2">
+        <div class="container-fluid">
+            @*sayfa tasması olmaması için container-fluid içine aldık*@
+
+            @* mevcut içerik render body*@
+            @RenderBody()
+        </div>
+    </div>
+    <script src="~/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @RenderSection("JavaScript", false)
+</body>
+</html>

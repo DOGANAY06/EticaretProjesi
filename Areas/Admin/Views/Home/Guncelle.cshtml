@@ -1,0 +1,37 @@
+﻿
+@model UrunGuncelleModel
+
+
+<form asp-action="Guncelle" asp-controller="Home" asp-area="Admin" method="post"
+      class="w-75 mx-auto p-3" enctype="multipart/form-data">
+    <!--enctype="multipart/form-data" bu form aracılığıyla dosya tasımamızı sağlar yoksa null döner-->
+    <input type="hidden" asp-for="Id"/>
+    <div class="form-group">
+        <label>Ürünün Adı:</label>
+        <span asp-validation-for="Ad" class="text-danger"></span>
+        <input asp-for="Ad" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Ürünün Fiyatı:</label>
+        <span asp-validation-for="Fiyat" class="text-danger"></span>
+        <input asp-for="Fiyat" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Ürünün Resmi:</label>
+
+        <input type="file" asp-for="Resim" class="form-control-file" />
+    </div>
+    <div class="form-group">
+        <a asp-action="Index" asp-controller="Home" asp-area="Admin" class="btn btn-warning">
+            Geri Dön
+        </a>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
+
+@section JavaScript
+{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

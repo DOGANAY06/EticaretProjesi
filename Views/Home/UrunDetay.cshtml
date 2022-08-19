@@ -1,0 +1,35 @@
+﻿
+@model Urun
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-3">
+                <img src="/img/@Model.Resim" class="w-100 img-thumbnail img-fluid" alt="@Model.Ad" />
+            </div>
+            <div class="col-md-9">
+             
+                <div class="card">
+                    <h5 class="card-header">@Model.Ad</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.Ad</h5>
+                        <p class="card-text">
+                            <strong class="alert-primary">
+                                Kategorileri:
+                            </strong>
+                            <getirKategoriAd urun-id="@Model.Id"></getirKategoriAd>
+                            <br />
+                            @Model.Fiyat
+                        </p>
+                        
+                        <a asp-action="EkleSepet" asp-controller="Home" asp-route-id="@Model.Id" class="btn btn-success float-right">Sepete Ekle</a>
+                        
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-danger float-right">Geri Dön</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+

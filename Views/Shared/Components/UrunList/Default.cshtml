@@ -1,0 +1,36 @@
+﻿
+@model List<Urun>
+@*uzun Urun yazısı yolundan kurtulmak için viewimport kullanıcaz*@
+
+<div class="row">
+    @if (Model.Count > 0)
+    {
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="card mr-1 mb-1">
+                    <img class="card-img-top" src="/img/@item.Resim" alt="Resim yok">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Ad</h5>
+                        <p class="card-text">@item.Fiyat</p>
+
+
+                        @*asp-controller ile Home içerisinde bulunan action UrunDetay git  *@
+                        @*ysk.com.tr/Home/UrunDetay?id=1&sayfa=3*@
+                        @*gider bu adres*@
+                        <a asp-action="UrunDetay" asp-controller="Home"
+                           asp-route-id="@item.Id"
+                           class="btn btn-primary float-right">Detay göster</a>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+    else
+    {
+        <div class="alert-info text-center">
+        Herhangi bir ürün bulunmamaktadır.
+    </div>
+    }
+</div>

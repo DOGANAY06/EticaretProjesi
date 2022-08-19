@@ -1,0 +1,30 @@
+﻿
+
+@model List<Kategori>
+
+<a asp-action="Ekle" asp-controller="Kategori" asp-area="Admin" class="btn btn-primary btn-sm my-2">Ekle</a>
+
+<table class="table table-sm table-bordered table-hover mt-2">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Ad</td>
+            <td>
+                <a asp-action="Guncelle" asp-controller="Kategori"
+                   asp-route-id="@item.Id" asp-area="Admin" class="btn btn-warning btn-sm">
+                    Güncelle
+                </a>
+                <a asp-action="Sil" asp-controller="Kategori"
+                   asp-route-id="@item.Id" asp-area="Admin" class="btn btn-danger btn-sm">
+                    Sil
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
