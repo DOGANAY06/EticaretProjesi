@@ -1,5 +1,6 @@
-# EticaretProjesi
+# EticaretProjesi 03.08 - 12.08 2022 
 EticaretProjesi .net core MVC  kullanarak Solvera Yazılım A.Ş de staj yaparken yaptığım örnek projedir.
+
 Projede kategoriye göre ürün ekleme satın alma işlemleri vardır. Online payment sistemi yoktur projede. Projenin herkes tarafından gördüğü kısmı ilk kısım admin girişi yapılan login paneli mevcuttur. Admin panelinde yapılabilecekler 3-4. resimde bulunmaktadır.
 
 ![staj1](https://user-images.githubusercontent.com/46906505/190332285-5320b179-4212-4cee-8648-3c63303dfd21.PNG)
